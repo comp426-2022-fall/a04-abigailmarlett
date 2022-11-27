@@ -7,3 +7,6 @@ import express from "express"
 
 //create app 
 const app = express();
+
+//args 
+const args = minimist(process.argv.slice(2))
