@@ -10,3 +10,6 @@ const app = express();
 
 //args 
 const args = minimist(process.argv.slice(2))
+
+//creating the port and making it 5000 if not specified
+const port = args.port || 5000
