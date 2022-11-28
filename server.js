@@ -77,6 +77,7 @@ app.get('/app/roll/:sides/:dice/:rolls/', (req, res, next) => {
     let rolls = parseInt(req.params.rolls);
     let ans = roll(sides, dice, rolls)
     res.send(ans);
+    console.log(ans);
     res.end();
 });
 
