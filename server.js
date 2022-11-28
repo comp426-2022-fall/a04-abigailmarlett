@@ -25,7 +25,12 @@ app.get('/app/', (req, res) => {
 //PART 4
 //Endpoint /app/roll/ that returns JSON for a default roll of two six-sided dice one time. 
 //Example output might look like: {"sides":6,"dice":2,"rolls":1,"results":[12]}.
-
+app.get('/app/roll/', (req, res) => {
+    ans = roll(6, 2, 1);
+    console.log(ans);
+    res.send(ans);
+    res.end();
+});
 
 
 //PART 5
