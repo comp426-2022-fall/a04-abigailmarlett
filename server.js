@@ -9,10 +9,10 @@ import express from "express"
 const app = express();
 
 //args 
-const args = minimist(process.argv.slice(2))
+const args = minimist(process.argv.slice(2));
 
 //creating the port and making it 5000 if not specified
-const port = args.port || 5000
+const port = args.port || 5000;
 
 app.use(express.urlencoded({extended:true}));
 
@@ -75,15 +75,15 @@ app.get('/app/roll/:sides/:dice/:rolls/', (req, res, next) => {
     let sides = parseInt(req.params.sides);
     let dice = parseInt(req.params.dice);
     let rolls = parseInt(req.params.rolls);
-    let ans = roll(sides, dice, rolls)
+    let ans = roll(sides, dice, rolls);
     res.send(ans);
     console.log(ans);
     res.end();
 });
 
 app.use((req, res) =>{
-    res.status(404)
-    res.send("404 NOT FOUND")
+    res.status(404);
+    res.send("404 NOT FOUND");
     res.end();
 });
 
