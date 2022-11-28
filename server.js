@@ -23,8 +23,7 @@ app.get('/app/', (req, res) => {
 //Endpoint /app/roll/ that returns JSON for a default roll of two six-sided dice one time. 
 //Example output might look like: {"sides":6,"dice":2,"rolls":1,"results":[12]}.
 app.get('/app/roll/', (req, res) => {
-    let ans = roll(6, 2, 1);
-    res.send(ans);
+    res.send(roll(6, 2, 1));
     res.end();
 });
 
@@ -35,8 +34,7 @@ app.post('/app/roll/', (req, res) => {
     let sides = parseInt(req.body.sides);
     let dice = parseInt(req.body.dice);
     let rolls = parseInt(req.body.rolls);
-    let ans = roll(sides, dice, rolls);
-    res.send(ans)
+    res.send(roll(sides, dice, rolls));
     res.end();
 });
 
@@ -45,8 +43,7 @@ app.post('/app/roll/', (req, res) => {
 //For example, /app/roll/6/ should return JSON for two six-sided dice, rolled one time, whereas /app/roll/10/ should return JSON for two ten-sided dice, rolled 1 time. The format of the resulting JSON should look like: {"sides":10,"dice":2,"rolls":1,"results":[17]}.
 app.get('/app/roll/:sides/', (req, res) => {
     let sides = parseInt(req.params.sides);
-    let ans = roll(sides, 2, 1);
-    res.send(ans);
+    res.send(roll(sides, 2, 1));
     res.end();
 });
 
@@ -56,8 +53,7 @@ app.get('/app/roll/:sides/', (req, res) => {
 app.get('/app/roll/:sides/:dice/', (req, res) => {
     let sides = parseInt(req.params.sides);
     let dice = parseInt(req.params.dice);
-    let ans = roll(sides, dice, 1);
-    res.send(ans);
+    res.send(roll(sides, dice, 1));
     res.end();
 });
 
@@ -68,8 +64,7 @@ app.get('/app/roll/:sides/:dice/:rolls/', (req, res) => {
     let sides = parseInt(req.params.sides);
     let dice = parseInt(req.params.dice);
     let rolls = parseInt(req.params.rolls);
-    let ans = roll(sides, dice, rolls);
-    res.send(ans);
+    res.send(roll(sides, dice, rolls));
     res.end();
 });
 
