@@ -71,6 +71,10 @@ app.get('/app/roll/:sides/:dice/', (req, res, next) => {
 //PART 8
 //Endpoint /app/roll/:sides/:dice/:rolls/ that returns JSON for the specified number of rolls with whatever number of sides and dice specified in the parameters. 
 //For example, /app/roll/6/2/1/ should return JSON for two six-sided dice, rolled one time, whereas /app/roll/10/3/8/ should return JSON for three ten-sided dice, rolled 1 time. The format of the resulting JSON should look like: {"sides":10,"dice":3,"rolls":8,"results":[6,13,30,17,16,27,4,29]}.
+app.get('/app/roll/:sides/:dice/:rolls/', (req, res, next) => {
+ 
+});
+
 
 //listen at the end
 
