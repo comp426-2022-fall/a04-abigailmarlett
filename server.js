@@ -82,5 +82,6 @@ app.get('/app/roll/:sides/:dice/:rolls/', (req, res, next) => {
 });
 
 
-//listen at the end
 
+//listen at the end
+app.listen(port);
