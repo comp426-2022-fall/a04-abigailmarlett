@@ -26,16 +26,24 @@ app.get('/app/', (req, res) => {
 //Endpoint /app/roll/ that returns JSON for a default roll of two six-sided dice one time. 
 //Example output might look like: {"sides":6,"dice":2,"rolls":1,"results":[12]}.
 app.get('/app/roll/', (req, res) => {
-    ans = roll(6, 2, 1);
+    let ans = roll(6, 2, 1);
     console.log(ans);
     res.send(ans);
     res.end();
 });
 
-
 //PART 5
 //Endpoint /app/roll/ should ALSO accept either JSON or URLEncoded data body for sides, dice, and rolls. 
 //Example URLEncoded string for data body: ?sides=20&dice=4&rolls=3. Example JSON data body: {"sides":20,"dice":4,"rolls":3}. The format of the resulting JSON should look like: {"sides":20,"dice":4,"rolls":3,"results":[19,3,60]}.
+app.post('/app/roll/', (req, res, next) => { 
+    let sides = parseInt(req.body.sides);
+    let dice = parseInt(req.body.dice);
+    let rolls = parseInt(req.body.rolls);
+    let ans = roll(sides, dice, rolls);
+    console.log(ans);
+    res.send(ans)
+    res.end();
+});
 
 //PART 6
 //Endpoint /app/roll/:sides/ that returns JSON for a default number of rolls and dice with whatever number of sides is specified in the parameter. 
